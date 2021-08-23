@@ -13,7 +13,7 @@ def test_create_customer_only_email_password():
     random_info = generate_random_email_and_password()
     logger.info(random_info)
     email = random_info['email']
-    password = ['password']
+    password = random_info['password']
 
     #create payload
     # payload = {'email': email, 'password': password}
