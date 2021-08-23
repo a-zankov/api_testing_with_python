@@ -21,4 +21,4 @@ class CustomerHelper(object):
         payload.update(kwargs)
 
         create_user_json = self.requests_utility.post('customers', payload=payload, expected_status_code=201)
-        return True
+        return create_user_json
