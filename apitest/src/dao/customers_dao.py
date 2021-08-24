@@ -1,4 +1,5 @@
 from apitest.src.utilities.dbUtility import DBUtility
+import random
 
 
 class CustomersDAO(object):
@@ -8,8 +9,6 @@ class CustomersDAO(object):
 
     def get_customer_by_email(self, email):
         """
-
-
         :param email:
         :return:
         """
@@ -17,3 +16,10 @@ class CustomersDAO(object):
         rs_sql = self.db_helper.execute_select(sql)
 
         return rs_sql
+
+    def get_random_customer_from_db(self, qty=1):
+
+        sql = "SELECT * FROM local.wp_users ORDER BY id DESC LIMIT 5000;"
+        rs_sql = self.db_helper.execute_select(sql)
+
+        return random.sample(rs_sql, int(qty))
