@@ -54,7 +54,7 @@ def test_create_customer_fail_for_existing_email():
     payload = {"email": existing_email, "password": "Password1"}
     cust_api_info = req_helper.post(endpoint='customers', payload=payload, expected_status_code=400)
 
-    assert cust_api_info['code'] == f"registration-error-email-exists', 'Create customer with existing email' \
-                                    'error code is not correct. Expected: registration-error-email-exists, ' \
-                                                                       'Actual: {cust_api_info['code']}"
+    assert cust_api_info['code'] == "registration-error-email-exists",\
+        f"Create customer with existing email error code is not correct. Expected: registration-error-email-exists," \
+        "Actual: {cust_api_info['code']}"
 
