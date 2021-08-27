@@ -3,8 +3,10 @@ from apitest.src.helpers.products_helper import ProductHelper
 from apitest.src.dao.products_dao import ProductsDAO
 import pytest
 
+pytestmark = [pytest.mark.products, pytest.mark.smoke]
+
+
 @pytest.mark.tcid26
-@pytest.mark.products
 def test_create_1_simple_product():
     # generate some data
     payload = dict()
