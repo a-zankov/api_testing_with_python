@@ -5,6 +5,12 @@ API_HOSTS = {
     "stage": ""
 
 }
+WOO_API_HOSTS = {
+    "test": "http://localhost:10003/",
+    "dev": "",
+    "stage": ""
+
+}
 
 DB_HOSTS = {
 
